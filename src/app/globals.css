@@ -7,9 +7,12 @@
   --foreground: #171717;
 }
 
+*{
+  @apply box-border m-0 p-0 ;
+}
 /* Global reset or normalize styles */
 body {
-  @apply bg-light-background text-light-text dark:bg-dark-background dark:text-dark-text;
+  @apply bg-light-background text-light-text dark:bg-dark-background dark:text-dark-text m-0 p-0 overflow-x-hidden max-w-full;
   transition: background-color 0.3s ease, color 0.3s ease;
   /* Smooth transitions */
 }
