@@ -7,17 +7,38 @@
   --foreground: #171717;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Global reset or normalize styles */
+body {
+  @apply bg-light-background text-light-text dark:bg-dark-background dark:text-dark-text;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  /* Smooth transitions */
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+/* Ensure buttons and inputs also respect dark mode */
+button,
+input,
+textarea {
+  @apply bg-light-background dark:bg-dark-background text-light-text dark:text-dark-text;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Customize global link styles */
+a {
+  @apply text-light-accentPrimary dark:text-dark-accentPrimary;
+  transition: color 0.3s ease;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply text-light-text dark:text-dark-text;
+}
+
+p {
+  @apply text-light-text dark:text-dark-text;
 }
 
 @layer utilities {
